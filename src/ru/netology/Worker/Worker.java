@@ -1,0 +1,23 @@
+package ru.netology.Worker;
+
+public class Worker {
+
+    private OnTaskDoneListener callback;
+    private OnTaskErrorListener errorCallback;
+
+    public Worker(OnTaskDoneListener callback, OnTaskErrorListener errorCallback) {
+        this.callback = callback;
+        this.errorCallback = errorCallback;
+    }
+
+    public void start() {
+        for (int i = 0; i < 100; i++) {
+            if (i == 33) {
+                errorCallback.onError("Task " + i + " finished with error");
+            } else {
+                callback.onDone("Task " + i + " is done");
+            }
+        }
+    }
+
+}

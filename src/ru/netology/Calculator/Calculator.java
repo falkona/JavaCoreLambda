@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.Calculator;
 
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
